@@ -3,6 +3,8 @@
 // Custom Theme Angular Material
 @use './theme/custom.theme.scss';
 
+@use './fonts/font';
+
 // Custom Angular Material Style
 @use './material/buttons';
 @use './material/input';
@@ -21,15 +23,15 @@
 	}
 }
 
-html,
-body {
+html {
 	height: 100%;
-	background-color: rgba(249, 250, 251, 1);
 }
 
 body {
 	margin: 0;
-	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	font-family: 'Inter', sans-serif;
+	background-color: #ffffff;
+	color: #0f1a28;
 }
 
 ::-webkit-scrollbar {

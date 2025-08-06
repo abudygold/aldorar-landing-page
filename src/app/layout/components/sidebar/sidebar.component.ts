@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, model, OnInit } from '@angu
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
+import { INavigation } from '../../../core/navigation';
 
 @Component({
 	selector: 'app-sidebar',
@@ -13,13 +14,13 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
 	#router = inject(Router);
 
-	navigation = model.required<any[]>();
+	navigation = model.required<INavigation[]>();
 
 	ngOnInit(): void {
 		this.navigation.update(menus => this.#changeActivateMenu(menus, this.#router.url));
 	}
 
-	#onExpandMenu(_menu: any): void {
+	#onExpandMenu(_menu: INavigation): void {
 		if (!_menu?.isParent) {
 			_menu.isOpened = !_menu.isOpened;
 			return;
@@ -34,14 +35,16 @@ export class SidebarComponent implements OnInit {
 		);
 	}
 
-	onClickMenu(menu: any): void {
-		if (!menu?.link) {
-			this.#onExpandMenu(menu);
+	onClickMenu(_menu: INavigation): void {
+		if (!_menu.link) {
+			this.#onExpandMenu(_menu);
 			return;
 		}
 
-		this.navigation.update(menus => this.#changeActivateMenu(menus, menu.link));
-		this.#router.navigate([menu.link]);
+		this.navigation.update(menus => this.#changeActivateMenu(menus, _menu.link || ''));
+		this.#router.navigate([_menu.link], {
+			queryParams: _menu.params || {},
+		});
 	}
 
 	#collapseMenu(menus: any[]): any[] {

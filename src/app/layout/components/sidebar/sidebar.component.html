@@ -15,8 +15,7 @@
 				</div>
 
 				<div class="tw-flex tw-items-center tw-gap-2">
-					<!-- <p class="tw-mb-0">42</p> -->
-					@if (menu?.subMenu?.length > 0) {
+					@if ((menu.subMenu || []).length > 0) {
 						<mat-icon>
 							@if (menu.isOpened) {
 								keyboard_arrow_up
@@ -29,8 +28,8 @@
 			</div>
 		</mat-list-item>
 
-		@if (menu?.subMenu?.length && menu.isOpened) {
-			<app-sidebar [navigation]="menu.subMenu" />
+		@if ((menu.subMenu || []).length && menu.isOpened) {
+			<app-sidebar [navigation]="menu.subMenu || []" />
 		}
 	}
 </mat-list>

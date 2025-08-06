@@ -1,11 +1,37 @@
-<mat-toolbar class="!tw-bg-white tw-border-t tw-shadow">
-	<button mat-icon-button (click)="sidenavToggle.emit()">
-		<mat-icon>menu</mat-icon>
-	</button>
+<div
+	class="!tw-bg-white tw-z-50"
+	[class.tw-sticky]="isScrolled()"
+	[class.tw-top-0]="isScrolled()"
+	[class.tw-shadow]="isScrolled()"
+>
+	<mat-toolbar class="md:lg:tw-max-w-screen-xl tw-place-self-center !tw-h-20 !tw-bg-white">
+		<button
+			mat-icon-button
+			class="tw-block md:lg:!tw-hidden tw-flex-auto"
+			(click)="sidenavToggle.emit()"
+		>
+			<mat-icon>menu</mat-icon>
+		</button>
 
-	<span class="header-spacer"></span>
+		<img
+			src="./company-logo.svg"
+			alt="Al Dorar Tour"
+			width="44"
+			height="44"
+			loading="lazy"
+			class="tw-hidden md:lg:!tw-block"
+		/>
 
-	<button mat-icon-button>
-		<mat-icon>settings</mat-icon>
-	</button>
-</mat-toolbar>
+		<div class="tw-mx-16 tw-flex-auto tw-hidden md:lg:!tw-block">
+			<div class="tw-flex tw-gap-10">
+				@for (menu of menus; track $index) {
+					<div class="tw-text-sm">
+						{{ menu.label }}
+					</div>
+				}
+			</div>
+		</div>
+
+		<lib-button [config]="formConfig.freeConsultationButton()" />
+	</mat-toolbar>
+</div>

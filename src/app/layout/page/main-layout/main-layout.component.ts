@@ -1,51 +1,24 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Component, HostListener, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from '../../components/header';
-import { BreadcrumbModel, BreadcrumbsComponent, isMobile } from '@devkitify/angular-ui-kit';
 import { FooterComponent } from '../../components/footer';
 import { SidebarComponent } from '../../components/sidebar';
-import { NAVIGATIONS } from '../../../app.const';
-import { filter } from 'rxjs';
+import { HEADER_MENUS, INavigation } from '../../../core/navigation';
 
 @Component({
 	selector: 'app-main-layout',
-	imports: [
-		RouterOutlet,
-		MatSidenavModule,
-		HeaderComponent,
-		FooterComponent,
-		SidebarComponent,
-		BreadcrumbsComponent,
-	],
+	imports: [RouterOutlet, MatSidenavModule, HeaderComponent, FooterComponent, SidebarComponent],
 	templateUrl: './main-layout.component.html',
 	styleUrl: './main-layout.component.scss',
 })
 export class MainLayoutComponent {
-	#router = inject(Router);
+	isScrolled = signal<boolean>(false);
 
-	navigation: any[] = NAVIGATIONS;
-	breadcrumbs: BreadcrumbModel[] = [];
-	drawerMode: 'side' | 'over';
-	drawerOpened: boolean;
+	navigation: INavigation[] = HEADER_MENUS;
 
-	constructor() {
-		this.drawerMode = isMobile() ? 'over' : 'side';
-		this.drawerOpened = isMobile() ? false : true;
-
-		this.#router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
-			const root = this.#router.routerState.root;
-			this.buildBreadcrumbs(root.snapshot);
-		});
-	}
-
-	buildBreadcrumbs(route: ActivatedRouteSnapshot | null): void {
-		if (!route) return;
-
-		const breadcrumbs = route.data['breadcrumb'];
-
-		if (breadcrumbs) this.breadcrumbs = breadcrumbs;
-
-		this.buildBreadcrumbs(route.firstChild);
+	@HostListener('window:scroll', [])
+	onWindowScroll() {
+		this.isScrolled.set(window.scrollY > 10);
 	}
 }

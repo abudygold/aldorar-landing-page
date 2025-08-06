@@ -1,9 +1,54 @@
-<mat-toolbar class="!tw-bg-white tw-border-t tw-shadow">
-	<p class="tw-text-gray-900 tw-text-sm">
-		<strong>Copyright © 2025 Angular UI Kit</strong>. All rights reserved.
-	</p>
+<footer class="tw-p-5 tw-shadow">
+	<div
+		class="tw-grid tw-grid-cols-4 md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl tw-place-self-center"
+	>
+		<div class="tw-col-span-4 md:lg:tw-col-span-3 tw-mb-3 md:lg:tw-mb-0">
+			<img src="./company-logo.svg" alt="Al Dorar Tour" width="44" height="44" loading="lazy" />
 
-	<span class="header-spacer"></span>
+			<p class="tw-text-base tw-tracking-wide tw-leading-7 tw-mt-4">
+				High level experience in web design and development knowledge, producing quality work.
+			</p>
+		</div>
+		<div class="tw-col-span-2 md:lg:tw-col-span-3 md:lg:tw-place-self-center">
+			<p class="tw-text-base tw-font-semibold tw-mb-3">Use Cases</p>
 
-	<span class="tw-text-gray-900 tw-text-sm"><strong>Version</strong> 1.0.0</span>
-</mat-toolbar>
+			<ul class="tw-text-sm tw-leading-9">
+				<li>Web-designers</li>
+				<li>Marketers</li>
+				<li>Small Bussiness</li>
+				<li>Website Builder</li>
+			</ul>
+		</div>
+		<div class="tw-col-span-2 md:lg:tw-col-span-3 md:lg:tw-place-self-center">
+			<p class="tw-text-base tw-font-semibold tw-mb-3">Company</p>
+
+			<ul class="tw-text-sm tw-leading-9">
+				<li>About Us</li>
+				<li>Careers</li>
+				<li>FAQs</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div
+			class="tw-col-span-4 md:lg:tw-col-span-3 tw-place-self-center tw-h-full tw-mt-4 md:lg:tw-mt-0"
+		>
+			<p class="tw-text-base tw-font-semibold tw-text-center md:lg:tw-text-justify tw-mb-3">
+				Follow us
+			</p>
+
+			<div class="tw-flex tw-gap-4">
+				@for (socmed of ['instagram', 'facebook', 'telegram']; track $index) {
+					<img
+						[src]="'./icons/socmed/' + socmed + '.svg'"
+						[alt]="socmed"
+						width="40"
+						height="40"
+						loading="lazy"
+					/>
+				}
+			</div>
+
+			<div></div>
+		</div>
+	</div>
+</footer>

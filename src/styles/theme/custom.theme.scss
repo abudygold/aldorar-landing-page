@@ -2,13 +2,21 @@
 @use './theme_theme-colors' as theme;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: theme.$primary-palette,
-      tertiary: theme.$tertiary-palette,
-      theme-type: light,
-    ),
-    typography: Roboto,
-    density: -2
-  ));
+	@include mat.theme(
+		(
+			color: (
+				theme-type: light,
+				primary: theme.$primary-palette,
+				tertiary: theme.$tertiary-palette,
+			),
+			typography: (
+				plain-family: Inter,
+				brand-family: Inter,
+				bold-weight: 900,
+				medium-weight: 500,
+				regular-weight: 400,
+			),
+			density: -2,
+		)
+	);
 }
