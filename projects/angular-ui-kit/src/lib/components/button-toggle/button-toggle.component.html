@@ -1,9 +1,0 @@
-<p>
-	<mat-slide-toggle
-		[labelPosition]="config().toggle?.labelPosition || 'after'"
-		[formControl]="control()"
-		(change)="onChange.emit($event)"
-	>
-		{{ config().label }}
-	</mat-slide-toggle>
-</p>
