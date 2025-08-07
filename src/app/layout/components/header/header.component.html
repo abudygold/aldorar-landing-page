@@ -10,12 +10,12 @@
 		<a routerLink="/" class="tw-flex tw-items-center tw-space-x-3 rtl:tw-space-x-reverse">
 			<img src="./company-logo.svg" alt="Al Dorar Tour" class="tw-h-8" loading="lazy" />
 		</a>
-		<div class="tw-flex tw-items-center md:tw-order-2 tw-space-x-2 rtl:tw-space-x-reverse">
+		<div class="tw-flex tw-items-center md:lg:tw-order-2 tw-space-x-2 rtl:tw-space-x-reverse">
 			<lib-button [config]="formConfig.freeConsultationButton()" />
 
 			<button
 				mat-icon-button
-				class="tw-inline-flex tw-items-center tw-p-2 tw-w-10 tw-h-10 tw-justify-center tw-text-sm tw-text-gray-500 tw-rounded-lg md:!tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200"
+				class="tw-inline-flex tw-items-center tw-p-2 tw-w-10 tw-h-10 tw-justify-center tw-text-sm tw-text-gray-500 tw-rounded-lg md:lg:!tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200"
 				(click)="isOpenMenu.set(!isOpenMenu())"
 			>
 				<svg
@@ -37,11 +37,11 @@
 		</div>
 		<div
 			id="mega-menu"
-			class="tw-items-center tw-justify-between tw-w-full md:tw-flex md:tw-w-auto md:tw-order-1"
+			class="tw-items-center tw-justify-between tw-w-full md:lg:tw-flex md:lg:tw-w-auto md:lg:tw-order-1"
 			[class.tw-hidden]="!isOpenMenu()"
 		>
 			<ul
-				class="tw-flex tw-flex-col tw-mt-4 tw-font-medium md:tw-flex-row md:tw-mt-0 md:tw-space-x-8 rtl:tw-space-x-reverse"
+				class="tw-flex tw-flex-col tw-mt-4 tw-font-medium md:lg:tw-flex-row md:lg:tw-mt-0 md:lg:tw-space-x-8 rtl:tw-space-x-reverse"
 			>
 				@for (menu of navigation(); track menu.label) {
 					@if ((menu?.subMenu || []).length > 0) {
@@ -49,7 +49,7 @@
 							<button
 								id="mega-menu-dropdown-button"
 								data-dropdown-toggle="mega-menu-dropdown"
-								class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-2 tw-px-3 tw-font-medium tw-text-gray-900 tw-border-b tw-border-gray-100 md:tw-w-auto md:tw-border-0 md:tw-p-0"
+								class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-2 tw-px-3 tw-font-medium tw-text-gray-900 tw-border-b tw-border-gray-100 md:lg:tw-w-auto md:lg:tw-border-0 md:lg:tw-p-0"
 							>
 								{{ menu.label }}
 								<svg
@@ -71,7 +71,7 @@
 							</button>
 							<div
 								id="mega-menu-dropdown"
-								class="tw-absolute tw-z-10 tw-w-11/12 tw-text-sm tw-bg-white tw-border tw-border-gray-100 tw-rounded-lg tw-shadow-md md:tw-w-auto"
+								class="tw-absolute tw-z-10 tw-w-11/12 tw-text-sm tw-bg-white tw-border tw-border-gray-100 tw-rounded-lg tw-shadow-md md:lg:tw-w-auto"
 								[class.tw-grid]="menu.isOpened"
 								[class.tw-hidden]="!menu.isOpened"
 							>
@@ -91,7 +91,7 @@
 					} @else {
 						<li>
 							<span
-								class="tw-block tw-py-2 tw-px-3 tw-text-[#101828] tw-border-b tw-border-gray-100 md:tw-border-0 md:tw-p-0 tw-cursor-pointer"
+								class="tw-block tw-py-2 tw-px-3 tw-text-[#101828] tw-border-b tw-border-gray-100 md:lg:tw-border-0 md:lg:tw-p-0 tw-cursor-pointer"
 								aria-current="page"
 								(click)="onClickMenu(menu)"
 							>
