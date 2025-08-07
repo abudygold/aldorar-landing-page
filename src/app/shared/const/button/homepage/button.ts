@@ -24,6 +24,10 @@ export const FREE_CONSULTATION_BUTTON: ButtonModel = new ButtonModel(
 	'primary',
 	false,
 	'tw-w-full !tw-h-10',
+	'',
+	'',
+	'start',
+	'./icons/socmed/whatsapp-white.svg',
 );
 
 export const CONTACT_US_BUTTON: ButtonModel = new ButtonModel(
@@ -32,6 +36,10 @@ export const CONTACT_US_BUTTON: ButtonModel = new ButtonModel(
 	'primary',
 	false,
 	'!tw-h-10',
+	'',
+	'',
+	'start',
+	'./icons/socmed/whatsapp-white.svg',
 );
 
 export const ABOUT_US_BUTTON: ButtonModel = new ButtonModel(
@@ -45,6 +53,14 @@ export const ABOUT_US_BUTTON: ButtonModel = new ButtonModel(
 export const READ_MORE_BUTTON: ButtonModel = new ButtonModel(
 	'flat',
 	'Selengkapnya',
+	'primary',
+	false,
+	'!tw-h-10',
+);
+
+export const READ_MORE_ARTICLE_BUTTON: ButtonModel = new ButtonModel(
+	'stroked',
+	'Baca Selengkapnya',
 	'primary',
 	false,
 	'!tw-h-10',

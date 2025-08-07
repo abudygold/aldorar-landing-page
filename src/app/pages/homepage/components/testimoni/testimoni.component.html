@@ -1,7 +1,74 @@
-<div class="tw-px-5 md:lg:tw-px-0 tw-py-6 md:lg:tw-py-16">
+<div class="tw-px-5 md:tw-px-0 tw-py-6 md:tw-py-16">
 	<div
-		class="tw-grid md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl md:lg:tw-place-self-center tw-mb-4"
+		class="tw-grid tw-mb-4 tw-w-full tw-place-self-center md:tw-grid-cols-12 md:tw-max-w-screen-xl"
 	>
-		<p>testimoni works!</p>
+		<div class="md:tw-col-span-12">
+			<p class="tw-text-3xl tw-font-semibold tw-tracking-wide md:tw-text-5xl md:tw-mb-6">
+				Testimoni
+			</p>
+
+			<p class="tw-text-base tw-mb-6 tw-tracking-wider tw-leading-7 md:tw-text-xl">
+				Berbagai pengalaman jamaah yang telah berangkat umroh bersama kami
+			</p>
+		</div>
+	</div>
+
+	<div
+		class="tw-grid tw-mb-4 tw-gap-5 tw-place-self-center md:tw-grid-cols-12 md:tw-max-w-screen-xl"
+	>
+		<div class="md:tw-col-span-3 tw-place-self-center">
+			<p class="tw-text-sm tw-mb-8">Fakta</p>
+			<p class="tw-text-5xl tw-font-bold tw-mb-4">97%</p>
+			<p class="tw-text-lg">
+				dari semua client kami merekomendasikan travel umroh dan haji Al - Dorar kepada keluarga dan
+				teman mereka, bahkan kepada orang lain sekalipun
+			</p>
+		</div>
+		<div class="md:tw-col-span-9 tw-overflow-x-auto">
+			<div class="tw-flex tw-gap-4 tw-my-4">
+				@for (item of [1, 2, 3, 4, 5]; track $index) {
+					<div class="tw-bg-[#f8f8f8] tw-min-w-[360px] tw-p-6">
+						<p class="tw-mb-6">
+							Reccommended umroh travel. Bimbingan Ustadz nya enak dapat Isg dimengerti. Lokasi
+							hotel baik di Mekkah dan Madinah dekat sehingga memudahkan dalam beribadah. Sukses
+							terus Namira travel, semoga dalam lindungan Allah
+						</p>
+
+						<div class="tw-flex tw-items-center tw-gap-6">
+							<img src="./company-logo.svg" alt="Al Dorar Tour" class="tw-h-12" loading="lazy" />
+
+							<div>
+								<p class="tw-text-base tw-font-bold">Johansyah Mardiyuana</p>
+								<p class="tw-text-sm">Bandung</p>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+		<!-- @for (item of [1, 2, 3]; track $index) {
+			<div class="md:tw-col-span-4">
+				<img
+					src="./background/dummy-bg.svg"
+					alt="Al Dorar Tour"
+					width="104"
+					height="104"
+					loading="lazy"
+					class="tw-w-full"
+				/>
+
+				<div class="tw-py-6">
+					<p class="tw-text-sm tw-mb-2">31 Juli 2025, 14:21</p>
+					<p class="tw-text-lg tw-font-bold tw-mb-2 md:tw-text-xl">
+						Bingung Pilih Paket Umroh yang Sesuai? Kenali Pilihan Lengkap dari Namira Tra...
+					</p>
+
+					<p class="tw-text-sm">
+						Keutamaan Puasa Asyura (10 Muharram) dan Amalan Sunnah yang Dianjurkan Bulan Muharram
+						adalah salah sat...
+					</p>
+				</div>
+			</div>
+		} -->
 	</div>
 </div>

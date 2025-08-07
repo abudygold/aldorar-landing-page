@@ -18,6 +18,29 @@ export const HEADER_MENUS: INavigation[] = [
 	},
 	{
 		isActive: false,
+		isOpened: false,
+		label: 'Layanan',
+		subMenu: [
+			{
+				isActive: false,
+				label: 'Paket Umroh',
+				link: '/package-list',
+				params: {
+					type: 'umroh',
+				},
+			},
+			{
+				isActive: false,
+				label: 'Paket Haji',
+				link: '/package-list',
+				params: {
+					type: 'haji',
+				},
+			},
+		],
+	},
+	{
+		isActive: false,
 		label: 'Paket Umroh',
 		link: '/package-list',
 		params: {

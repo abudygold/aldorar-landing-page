@@ -1,37 +1,106 @@
-<div
-	class="!tw-bg-white tw-z-50"
+<nav
+	class="tw-bg-white tw-border-gray-200 tw-z-50"
 	[class.tw-sticky]="isScrolled()"
 	[class.tw-top-0]="isScrolled()"
 	[class.tw-shadow]="isScrolled()"
 >
-	<mat-toolbar class="md:lg:tw-max-w-screen-xl tw-place-self-center !tw-h-20 !tw-bg-white">
-		<button
-			mat-icon-button
-			class="tw-block md:lg:!tw-hidden tw-flex-auto"
-			(click)="sidenavToggle.emit()"
-		>
-			<mat-icon>menu</mat-icon>
-		</button>
+	<div
+		class="tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-max-w-screen-xl tw-mx-auto tw-p-4"
+	>
+		<a routerLink="/" class="tw-flex tw-items-center tw-space-x-3 rtl:tw-space-x-reverse">
+			<img src="./company-logo.svg" alt="Al Dorar Tour" class="tw-h-8" loading="lazy" />
+		</a>
+		<div class="tw-flex tw-items-center md:tw-order-2 tw-space-x-2 rtl:tw-space-x-reverse">
+			<lib-button [config]="formConfig.freeConsultationButton()" />
 
-		<img
-			src="./company-logo.svg"
-			alt="Al Dorar Tour"
-			width="44"
-			height="44"
-			loading="lazy"
-			class="tw-hidden md:lg:!tw-block"
-		/>
-
-		<div class="tw-mx-16 tw-flex-auto tw-hidden md:lg:!tw-block">
-			<div class="tw-flex tw-gap-10">
-				@for (menu of menus; track $index) {
-					<div class="tw-text-sm">
-						{{ menu.label }}
-					</div>
-				}
-			</div>
+			<button
+				mat-icon-button
+				class="tw-inline-flex tw-items-center tw-p-2 tw-w-10 tw-h-10 tw-justify-center tw-text-sm tw-text-gray-500 tw-rounded-lg md:!tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200"
+				(click)="isOpenMenu.set(!isOpenMenu())"
+			>
+				<svg
+					class="tw-w-5 tw-h-5"
+					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 17 14"
+				>
+					<path
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M1 1h15M1 7h15M1 13h15"
+					/>
+				</svg>
+			</button>
 		</div>
-
-		<lib-button [config]="formConfig.freeConsultationButton()" />
-	</mat-toolbar>
-</div>
+		<div
+			id="mega-menu"
+			class="tw-items-center tw-justify-between tw-w-full md:tw-flex md:tw-w-auto md:tw-order-1"
+			[class.tw-hidden]="!isOpenMenu()"
+		>
+			<ul
+				class="tw-flex tw-flex-col tw-mt-4 tw-font-medium md:tw-flex-row md:tw-mt-0 md:tw-space-x-8 rtl:tw-space-x-reverse"
+			>
+				@for (menu of navigation(); track menu.label) {
+					@if ((menu?.subMenu || []).length > 0) {
+						<li>
+							<button
+								id="mega-menu-dropdown-button"
+								data-dropdown-toggle="mega-menu-dropdown"
+								class="tw-flex tw-items-center tw-justify-between tw-w-full tw-py-2 tw-px-3 tw-font-medium tw-text-gray-900 tw-border-b tw-border-gray-100 md:tw-w-auto md:tw-border-0 md:tw-p-0"
+							>
+								{{ menu.label }}
+								<svg
+									class="tw-w-2.5 tw-h-2.5 tw-ms-3"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 10 6"
+									(click)="menu.isOpened = !menu.isOpened"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m1 1 4 4 4-4"
+									/>
+								</svg>
+							</button>
+							<div
+								id="mega-menu-dropdown"
+								class="tw-absolute tw-z-10 tw-w-11/12 tw-text-sm tw-bg-white tw-border tw-border-gray-100 tw-rounded-lg tw-shadow-md md:tw-w-auto"
+								[class.tw-grid]="menu.isOpened"
+								[class.tw-hidden]="!menu.isOpened"
+							>
+								<div class="tw-p-4 tw-pb-4 tw-text-gray-900">
+									<ul class="tw-space-y-4" aria-labelledby="mega-menu-dropdown-button">
+										@for (subMenu of menu?.subMenu; track subMenu.label) {
+											<li>
+												<span class="tw-text-[#101828]" (click)="onClickMenu(menu)">
+													{{ subMenu.label }}
+												</span>
+											</li>
+										}
+									</ul>
+								</div>
+							</div>
+						</li>
+					} @else {
+						<li>
+							<span
+								class="tw-block tw-py-2 tw-px-3 tw-text-[#101828] tw-border-b tw-border-gray-100 md:tw-border-0 md:tw-p-0 tw-cursor-pointer"
+								aria-current="page"
+								(click)="onClickMenu(menu)"
+							>
+								{{ menu.label }}
+							</span>
+						</li>
+					}
+				}
+			</ul>
+		</div>
+	</div>
+</nav>

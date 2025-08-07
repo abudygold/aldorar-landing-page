@@ -1,15 +1,15 @@
-<div class="tw-px-5 md:lg:tw-px-0 tw-py-6 md:lg:tw-py-16">
-	<div
-		class="tw-grid md:lg:tw-grid-cols-12 md:lg:tw-gap-10 md:lg:tw-max-w-screen-xl tw-place-self-center"
-	>
-		<div class="md:lg:tw-col-span-6 tw-mb-3 md:lg:tw-mb-0">
-			<p class="tw-text-3xl md:lg:tw-text-5xl tw-font-semibold tw-tracking-wide">
+<div class="tw-px-5 tw-py-6 md:tw-px-0 md:tw-py-16">
+	<div class="tw-grid tw-place-self-center md:tw-grid-cols-12 md:tw-gap-28 md:tw-max-w-screen-xl">
+		<div class="tw-mb-3 md:tw-col-span-6 md:tw-mb-0">
+			<p
+				class="tw-text-3xl tw-font-semibold tw-tracking-wide md:tw-text-[40px] md:tw-leading-[3rem]"
+			>
 				Paket Layanan Haji dan Umrah
 			</p>
 		</div>
 
-		<div class="md:lg:tw-col-span-6 tw-place-self-center">
-			<p class="tw-text-base md:lg:tw-text-xl tw-tracking-wider tw-leading-7">
+		<div class="tw-place-self-center md:tw-col-span-6">
+			<p class="tw-text-base tw-tracking-wider tw-leading-7 md:tw-text-xl">
 				Jelajahi pilihan paket Haji dan Umrah terbaik dari Maktour. Tersedia layanan lengkap dengan
 				fasilitas premium, bimbingan profesional, dan jadwal keberangkatan pasti.
 			</p>
@@ -17,9 +17,9 @@
 	</div>
 
 	<div
-		class="tw-grid md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl md:lg:tw-place-self-center tw-mt-6 md:lg:tw-mt-10"
+		class="tw-grid tw-mt-6 md:tw-grid-cols-12 md:tw-max-w-screen-xl md:tw-place-self-center md:tw-mt-10"
 	>
-		<div class="tw-flex tw-gap-5">
+		<div class="tw-flex tw-gap-3">
 			<lib-button
 				[config]="formConfig.servicePackageButton().umrohButton"
 				(onClick)="onPackageChange('umroh')"
@@ -32,41 +32,48 @@
 	</div>
 
 	<div
-		class="tw-grid md:lg:tw-grid-cols-12 tw-gap-5 md:lg:tw-gap-10 md:lg:tw-max-w-screen-xl tw-place-self-center tw-my-6"
+		class="tw-grid tw-place-self-center tw-my-6 md:tw-grid-cols-12 tw-gap-5 md:tw-gap-10 md:tw-max-w-screen-xl"
 	>
 		@for (item of [1, 2, 3]; track $index) {
-			<div class="md:lg:tw-col-span-4">
+			<div class="tw-border tw-border-solid tw-rounded-3xl md:tw-col-span-4">
 				<img
 					src="./background/dummy-bg.svg"
 					alt="Al Dorar Tour"
 					width="104"
 					height="104"
 					loading="lazy"
-					class="tw-w-full tw-rounded-[32px] tw-shadow tw-mb-6"
+					class="tw-w-full tw-rounded-tl-3xl tw-rounded-tr-3xl"
 				/>
 
-				<p class="tw-text-lg md:lg:tw-text-xl tw-font-bold tw-mb-3">
-					UMROH PLUS THAIF AKHIR DESEMBER 2025 🌟
-				</p>
+				<div class="tw-p-6">
+					<p class="tw-text-xl tw-font-bold md:tw-text-2xl tw-mb-3">
+						UMROH PLUS THAIF AKHIR DESEMBER 2025 🌟
+					</p>
 
-				<p class="tw-text-sm tw-font-normal tw-leading-7">Durasi</p>
+					<p class="tw-flex tw-text-sm tw-font-normal tw-leading-7 tw-mb-2">
+						<img src="./icons/calendar.svg" />
+						05 Oktober 2025
+					</p>
 
-				<p class="tw-text-sm tw-font-normal tw-leading-7">Tanggal Keberangkatan</p>
+					<p class="tw-flex tw-text-sm tw-font-normal tw-leading-7 tw-mb-2">
+						<img src="./icons/plane.svg" />
+						Saudia
+					</p>
 
-				<p class="tw-text-sm tw-font-normal tw-leading-7">Keberangkatan Dari</p>
+					<p class="tw-flex tw-text-sm tw-font-normal tw-leading-7 tw-mb-2">
+						<img src="./icons/schedule.svg" />
+						9 Hari
+					</p>
 
-				<p class="tw-text-sm tw-font-normal tw-leading-7">Maskapai</p>
+					<p class="tw-text-sm tw-font-normal tw-mt-4">Harga Mulai</p>
 
-				<p class="tw-text-sm tw-font-normal tw-leading-7">Ketersediaan Slot</p>
-
-				<p class="tw-text-sm tw-font-normal tw-mt-6">Harga Mulai</p>
-
-				<p class="tw-text-xl tw-font-bold">28.9 Juta</p>
+					<p class="tw-text-2xl tw-font-bold tw-text-[#ff3838]">Rp30.550.000</p>
+				</div>
 			</div>
 		}
 	</div>
 
-	<div class="tw-grid md:lg:tw-grid-cols-1 md:lg:tw-max-w-screen-xl tw-place-self-center">
+	<div class="tw-grid tw-place-self-center md:tw-grid-cols-1 md:tw-max-w-screen-xl">
 		<lib-button [config]="formConfig.readMoreButton()" />
 	</div>
 </div>

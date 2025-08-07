@@ -1,19 +1,7 @@
-<mat-drawer-container class="tw-w-full tw-h-full !tw-bg-white !tw-overflow-visible">
-	<mat-drawer
-		#drawer
-		mode="over"
-		class="!tw-bg-[var(--mat-sys-primary)] tw-border-t tw-shadow !tw-rounded-none"
-	>
-		<app-sidebar [navigation]="navigation" />
-	</mat-drawer>
+<app-header [isScrolled]="isScrolled()" />
 
-	<mat-drawer-content class="!tw-overflow-visible">
-		<app-header [isScrolled]="isScrolled()" (sidenavToggle)="drawer.toggle()" />
+<main>
+	<router-outlet></router-outlet>
+</main>
 
-		<main>
-			<router-outlet></router-outlet>
-		</main>
-
-		<app-footer />
-	</mat-drawer-content>
-</mat-drawer-container>
+<app-footer />
