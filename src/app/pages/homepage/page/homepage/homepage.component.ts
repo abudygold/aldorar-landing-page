@@ -6,12 +6,14 @@ import { PackageInformationComponent } from '../../components/package-informatio
 import { ServicePackageComponent } from '../../components/service-package';
 import { TestimoniComponent } from '../../components/testimoni';
 import { WhyUsComponent } from '../../components/why-us';
+import { PartnerComponent } from '../../components/partner';
 
 @Component({
 	selector: 'app-homepage',
 	imports: [
 		HeadingTextComponent,
 		CarouselComponent,
+		PartnerComponent,
 		ServicePackageComponent,
 		WhyUsComponent,
 		TestimoniComponent,
