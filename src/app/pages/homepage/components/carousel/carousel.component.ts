@@ -2,11 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import EmblaCarousel, { EmblaOptionsType } from 'embla-carousel';
 import ClassNames from 'embla-carousel-class-names';
 import Autoplay from 'embla-carousel-autoplay';
-import {
-	addDotBtnsAndClickHandlers,
-	addPrevNextBtnsClickHandlers,
-	setupTweenOpacity,
-} from '../../../../core/embla';
+import { addPrevNextBtnsClickHandlers } from '../../../../core/embla';
 
 @Component({
 	selector: 'app-carousel',
