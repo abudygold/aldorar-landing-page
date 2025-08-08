@@ -1,7 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import EmblaCarousel from 'embla-carousel';
-import ClassNames from 'embla-carousel-class-names';
 import Autoplay from 'embla-carousel-autoplay';
+import ClassNames from 'embla-carousel-class-names';
 import { addPrevNextBtnsClickHandlers } from '../../../../core/embla';
 
 @Component({

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import EmblaCarousel from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import ClassNames from 'embla-carousel-class-names';
 
 @Component({
 	selector: 'app-partner',
@@ -18,7 +19,7 @@ export class PartnerComponent implements AfterViewInit {
 			{
 				loop: true,
 			},
-			[Autoplay({ playOnInit: true, delay: 5000 })],
+			[Autoplay({ playOnInit: true, delay: 5000 }), ClassNames()],
 		);
 	}
 }
