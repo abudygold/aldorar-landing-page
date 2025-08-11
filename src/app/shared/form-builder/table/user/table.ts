@@ -28,6 +28,6 @@ USERS_TABLE.columns = [
 		sortable: false,
 	},
 ];
-USERS_TABLE.sortKey = 'name';
-USERS_TABLE.sortOrder = 'asc';
+USERS_TABLE.sortActive = 'name';
+USERS_TABLE.sortDirection = 'asc';
 USERS_TABLE.isHttpPagination.set(false);

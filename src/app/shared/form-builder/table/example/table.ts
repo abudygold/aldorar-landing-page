@@ -122,8 +122,8 @@ EXAMPLES_TABLE.columns = [
 ];
 EXAMPLES_TABLE.dataTotal = EXAMPLE_DUMMY_DATA.length;
 EXAMPLES_TABLE.dataSource = EXAMPLE_DUMMY_DATA;
-EXAMPLES_TABLE.sortKey = 'name';
-EXAMPLES_TABLE.sortOrder = 'asc';
+EXAMPLES_TABLE.sortActive = 'name';
+EXAMPLES_TABLE.sortDirection = 'asc';
 EXAMPLES_TABLE.isHttpPagination.set(false);
 EXAMPLES_TABLE.generateDataType();
 EXAMPLES_TABLE.dataType = {
