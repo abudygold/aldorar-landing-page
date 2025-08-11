@@ -1,0 +1,49 @@
+<div class="tw-p-6 md:lg:tw-px-0 md:lg:tw-pt-16: md:lg:tw-pb-10">
+	<div class="tw-grid tw-mb-4 tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl">
+		<div class="md:lg:tw-col-span-12">
+			<p class="tw-text-3xl tw-font-semibold tw-tracking-wide md:lg:tw-text-5xl md:lg:tw-mb-6">
+				Informasi Haji & Umroh
+			</p>
+
+			<p class="tw-text-base tw-mb-6 tw-tracking-wider tw-leading-7 md:lg:tw-text-xl">
+				Jelajahi pilihan paket Haji dan Umrah terbaik dari Maktour. Tersedia layanan lengkap dengan
+				fasilitas premium, bimbingan profesional, dan jadwal keberangkatan pasti.
+			</p>
+		</div>
+	</div>
+
+	<div
+		class="tw-grid tw-mb-4 tw-gap-5 tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl md:lg:tw-gap-10"
+	>
+		@for (item of [1, 2, 3]; track $index) {
+			<div class="md:lg:tw-col-span-4">
+				<img
+					src="./background/dummy-bg.svg"
+					alt="Al Dorar Tour"
+					width="104"
+					height="104"
+					loading="lazy"
+					class="tw-w-full tw-rounded-3xl"
+				/>
+
+				<div class="tw-py-6">
+					<p class="tw-text-sm tw-mb-2">31 Juli 2025, 14:21</p>
+					<p class="tw-text-lg tw-font-bold tw-mb-2 md:lg:tw-text-xl">
+						Bingung Pilih Paket Umroh yang Sesuai? Kenali Pilihan Lengkap dari Namira Tra...
+					</p>
+
+					<p class="tw-text-sm">
+						Keutamaan Puasa Asyura (10 Muharram) dan Amalan Sunnah yang Dianjurkan Bulan Muharram
+						adalah salah sat...
+					</p>
+				</div>
+
+				<lib-button [config]="formConfig.articleButton().readMoreButton" />
+			</div>
+		}
+	</div>
+
+	<div class="tw-flex tw-justify-center tw-mt-5 md:lg:tw-mt-10">
+		<lib-button [config]="formConfig.articleButton().seeMoreButton" />
+	</div>
+</div>

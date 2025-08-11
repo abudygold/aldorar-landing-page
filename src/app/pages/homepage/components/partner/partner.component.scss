@@ -12,7 +12,6 @@
 	display: flex;
 	justify-content: center;
 	touch-action: pan-y pinch-zoom;
-	// margin-left: calc(var(--slide-partner-spacing) * -1);
 }
 .embla_partner__slide {
 	transform: translate3d(0, 0, 0);

@@ -1,7 +1,7 @@
 import { Component, inject, input, model, signal } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ButtonComponent, ButtonModel } from '@devkitify/angular-ui-kit';
-import { FREE_CONSULTATION_BUTTON } from '../../../shared/const/button/homepage';
+import { FREE_CONSULTATION_BUTTON } from '../../../shared/form-builder/button/homepage';
 import { HEADER_MENUS, INavigation } from '../../../core/navigation';
 
 @Component({

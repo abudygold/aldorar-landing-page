@@ -3,8 +3,8 @@ import { ButtonComponent, ButtonModel } from '@devkitify/angular-ui-kit';
 import {
 	IServicePackageButton,
 	READ_MORE_BUTTON,
-	SERVICE_PACKAGE_CONST,
-} from '../../../../shared/const/button/homepage';
+	SERVICE_PACKAGE_BUTTON_CONST,
+} from '../../../../shared/form-builder/button/homepage';
 
 @Component({
 	selector: 'app-service-package',
@@ -14,7 +14,7 @@ import {
 })
 export class ServicePackageComponent {
 	formConfig = {
-		servicePackageButton: signal<IServicePackageButton>(SERVICE_PACKAGE_CONST()),
+		servicePackageButton: signal<IServicePackageButton>(SERVICE_PACKAGE_BUTTON_CONST()),
 		readMoreButton: signal<ButtonModel>(READ_MORE_BUTTON),
 	};
 

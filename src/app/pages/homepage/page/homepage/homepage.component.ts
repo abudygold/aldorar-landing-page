@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AboutUsComponent } from '../../components/about-us';
 import { CarouselComponent } from '../../components/carousel';
 import { HeadingTextComponent } from '../../components/heading-text';
-import { PackageInformationComponent } from '../../components/package-information';
+import { ArticleComponent } from '../../components/article';
 import { ServicePackageComponent } from '../../components/service-package';
 import { TestimoniComponent } from '../../components/testimoni';
 import { WhyUsComponent } from '../../components/why-us';
@@ -17,7 +17,7 @@ import { PartnerComponent } from '../../components/partner';
 		ServicePackageComponent,
 		WhyUsComponent,
 		TestimoniComponent,
-		PackageInformationComponent,
+		ArticleComponent,
 		AboutUsComponent,
 	],
 	templateUrl: './homepage.component.html',

@@ -1,49 +1,117 @@
-<div class="tw-p-6 md:lg:tw-px-0 md:lg:tw-py-16">
-	<div
-		class="tw-grid tw-mb-4 tw-w-full tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl"
-	>
-		<div class="md:lg:tw-col-span-12">
-			<p class="tw-text-3xl tw-font-semibold tw-tracking-wide md:lg:tw-text-5xl md:lg:tw-mb-6">
-				Testimoni
-			</p>
+<div class="testimoni-bg">
+	<div class="tw-p-6 md:lg:tw-px-0 md:lg:tw-py-16">
+		<div
+			class="tw-grid tw-mb-4 tw-w-full tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl"
+		>
+			<div class="md:lg:tw-col-span-12">
+				<p
+					class="tw-text-3xl tw-font-semibold tw-text-[#fcfcfd] tw-tracking-wide md:lg:tw-text-5xl md:lg:tw-mb-6"
+				>
+					Testimoni
+				</p>
 
-			<p class="tw-text-base tw-mb-6 tw-tracking-wider tw-leading-7 md:lg:tw-text-xl">
-				Berbagai pengalaman jamaah yang telah berangkat umroh bersama kami
-			</p>
+				<p
+					class="tw-text-base tw-text-[#f2f4f7] tw-mb-6 tw-tracking-wider tw-leading-7 md:lg:tw-text-xl"
+				>
+					Berbagai pengalaman jamaah yang telah berangkat umroh bersama kami
+				</p>
+			</div>
 		</div>
-	</div>
 
-	<div
-		class="tw-grid tw-mb-4 tw-gap-5 tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl"
-	>
-		<div class="md:lg:tw-col-span-3 tw-place-self-center">
-			<p class="tw-text-sm tw-mb-8">Fakta</p>
-			<p class="tw-text-5xl tw-font-bold tw-mb-4">97%</p>
-			<p class="tw-text-lg">
-				dari semua client kami merekomendasikan travel umroh dan haji Al - Dorar kepada keluarga dan
-				teman mereka, bahkan kepada orang lain sekalipun
-			</p>
-		</div>
-		<div class="md:lg:tw-col-span-9 tw-overflow-x-auto">
-			<div class="tw-flex tw-gap-4 tw-my-4">
-				@for (item of [1, 2, 3, 4, 5]; track $index) {
-					<div class="tw-bg-[#f8f8f8] tw-min-w-[360px] tw-p-6">
-						<p class="tw-mb-6">
-							Reccommended umroh travel. Bimbingan Ustadz nya enak dapat Isg dimengerti. Lokasi
-							hotel baik di Mekkah dan Madinah dekat sehingga memudahkan dalam beribadah. Sukses
-							terus Namira travel, semoga dalam lindungan Allah
-						</p>
+		<div
+			class="tw-grid tw-mb-4 tw-gap-5 tw-place-self-center md:lg:tw-grid-cols-12 md:lg:tw-max-w-screen-xl"
+		>
+			<div class="md:lg:tw-col-span-3 tw-place-self-center">
+				<p class="tw-text-sm tw-text-[#d0d5dd] tw-mb-8">Fakta</p>
+				<p class="tw-text-5xl tw-font-bold tw-text-[#fcfcfd] tw-mb-4">97%</p>
+				<p class="tw-text-lg tw-text-[#f2f4f7]">
+					dari semua client kami merekomendasikan travel umroh dan haji Al - Dorar kepada keluarga
+					dan teman mereka, bahkan kepada orang lain sekalipun
+				</p>
+			</div>
+			<!-- <div class="md:lg:tw-col-span-9 tw-overflow-x-auto"> -->
+			<div class="md:lg:tw-col-span-9 tw-w-full tw-overflow-hidden">
+				<div class="tw-flex tw-gap-4 tw-my-4">
+					<div class="embla_testimoni">
+						<div class="embla_testimoni__viewport">
+							<div class="embla_testimoni__container">
+								@for (item of [1, 2, 3, 4, 5]; track $index) {
+									<div class="embla_testimoni__slide">
+										<div
+											class="tw-bg-[#f8f8f8] tw-min-w-[360px] tw-rounded-3xl tw-p-6 embla_testimoni__slide__img"
+										>
+											<p class="tw-mb-6">
+												Reccommended umroh travel. Bimbingan Ustadz nya enak dapat Isg dimengerti.
+												Lokasi hotel baik di Mekkah dan Madinah dekat sehingga memudahkan dalam
+												beribadah. Sukses terus Namira travel, semoga dalam lindungan Allah
+											</p>
 
-						<div class="tw-flex tw-items-center tw-gap-6">
-							<img src="./company-logo.svg" alt="Al Dorar Tour" class="tw-h-12" loading="lazy" />
+											<div class="tw-flex tw-items-center tw-gap-6">
+												<img
+													src="./company-logo.svg"
+													alt="Al Dorar Tour"
+													class="tw-h-12"
+													loading="lazy"
+												/>
 
-							<div>
-								<p class="tw-text-base tw-font-bold">Johansyah Mardiyuana</p>
-								<p class="tw-text-sm">Bandung</p>
+												<div>
+													<p class="tw-text-base tw-font-bold">Johansyah Mardiyuana</p>
+													<p class="tw-text-sm">Bandung</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								}
+							</div>
+							<div class="embla_testimoni__controls">
+								<div class="embla_testimoni__dots"></div>
+								<div class="embla_testimoni__buttons">
+									<button
+										class="embla_testimoni__button embla_testimoni__button--prev"
+										type="button"
+										disabled=""
+									>
+										<svg class="embla_testimoni__button__svg" viewBox="0 0 532 532">
+											<path
+												fill="currentColor"
+												d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+											></path>
+										</svg></button
+									><button
+										class="embla_testimoni__button embla_testimoni__button--next"
+										type="button"
+										disabled=""
+									>
+										<svg class="embla_testimoni__button__svg" viewBox="0 0 532 532">
+											<path
+												fill="currentColor"
+												d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+											></path>
+										</svg>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				}
+					<!-- @for (item of [1, 2, 3, 4, 5]; track $index) {
+						<div class="tw-bg-[#f8f8f8] tw-min-w-[360px] tw-rounded-3xl tw-p-6">
+							<p class="tw-mb-6">
+								Reccommended umroh travel. Bimbingan Ustadz nya enak dapat Isg dimengerti. Lokasi
+								hotel baik di Mekkah dan Madinah dekat sehingga memudahkan dalam beribadah. Sukses
+								terus Namira travel, semoga dalam lindungan Allah
+							</p>
+
+							<div class="tw-flex tw-items-center tw-gap-6">
+								<img src="./company-logo.svg" alt="Al Dorar Tour" class="tw-h-12" loading="lazy" />
+
+								<div>
+									<p class="tw-text-base tw-font-bold">Johansyah Mardiyuana</p>
+									<p class="tw-text-sm">Bandung</p>
+								</div>
+							</div>
+						</div>
+					} -->
+				</div>
 			</div>
 		</div>
 	</div>

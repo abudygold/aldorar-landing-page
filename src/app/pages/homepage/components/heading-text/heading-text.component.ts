@@ -1,6 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { ButtonComponent, ButtonModel } from '@devkitify/angular-ui-kit';
-import { CONTACT_US_BUTTON } from '../../../../shared/const/button/homepage';
+import { ButtonComponent } from '@devkitify/angular-ui-kit';
+import {
+	HEADING_BUTTON_CONST,
+	IHeadingButton,
+} from '../../../../shared/form-builder/button/homepage';
 
 @Component({
 	selector: 'app-heading-text',
@@ -10,6 +13,6 @@ import { CONTACT_US_BUTTON } from '../../../../shared/const/button/homepage';
 })
 export class HeadingTextComponent {
 	formConfig = {
-		contactUsButton: signal<ButtonModel>(CONTACT_US_BUTTON),
+		headingButton: signal<IHeadingButton>(HEADING_BUTTON_CONST()),
 	};
 }
